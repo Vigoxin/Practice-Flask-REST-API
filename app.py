@@ -17,10 +17,6 @@ app.secret_key = 'asdfasdfasdf'
 # Initialising flask-restful api
 api = Api(app)
 
-# Creating tables
-@app.before_first_request
-def create_tables():
-	db.create_all()
 
 # Adding JWT
 jwt = JWT(app, authenticate, identity)
